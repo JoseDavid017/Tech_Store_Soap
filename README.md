@@ -42,7 +42,7 @@ Para ejecutar el proyecto es necesario contar con:
 1. Clonar el repositorio:
 
    ```bash
-   git clone https://github.com/JoseDavid017.git
+   git clone https://github.com/JoseDavid017/Tech_Store_Soap.git
    ```
 
 2. Abrir la solución del proyecto (`.sln`) en Visual Studio.
