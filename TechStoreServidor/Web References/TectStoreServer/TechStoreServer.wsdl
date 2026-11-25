@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ConsultarProductos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="productId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarProductosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarProductosResult" type="tns:Products" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Products">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Price" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="StockQuantity" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegistrarProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="productName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="stockQuantity" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarProductoResult" type="tns:Products" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="productId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="productName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="stockQuantity" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarProductoResult" type="tns:Products" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="productId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarProductoResult" type="tns:Products" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultarProductosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarProductos" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProductosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarProducto" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarProducto" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarProducto" />
+  </wsdl:message>
+  <wsdl:message name="EliminarProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarProductoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TechStoreServerSoap">
+    <wsdl:operation name="ConsultarProductos">
+      <wsdl:input message="tns:ConsultarProductosSoapIn" />
+      <wsdl:output message="tns:ConsultarProductosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarProducto">
+      <wsdl:input message="tns:RegistrarProductoSoapIn" />
+      <wsdl:output message="tns:RegistrarProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarProducto">
+      <wsdl:input message="tns:ActualizarProductoSoapIn" />
+      <wsdl:output message="tns:ActualizarProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarProducto">
+      <wsdl:input message="tns:EliminarProductoSoapIn" />
+      <wsdl:output message="tns:EliminarProductoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TechStoreServerSoap" type="tns:TechStoreServerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarProductos">
+      <soap:operation soapAction="http://tempuri.org/ConsultarProductos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarProducto">
+      <soap:operation soapAction="http://tempuri.org/RegistrarProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarProducto">
+      <soap:operation soapAction="http://tempuri.org/ActualizarProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarProducto">
+      <soap:operation soapAction="http://tempuri.org/EliminarProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TechStoreServerSoap12" type="tns:TechStoreServerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarProductos">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarProductos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarProducto">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarProducto">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarProducto">
+      <soap12:operation soapAction="http://tempuri.org/EliminarProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TechStoreServer">
+    <wsdl:port name="TechStoreServerSoap" binding="tns:TechStoreServerSoap">
+      <soap:address location="https://localhost:44398/TechStoreServer.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TechStoreServerSoap12" binding="tns:TechStoreServerSoap12">
+      <soap12:address location="https://localhost:44398/TechStoreServer.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
