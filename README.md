@@ -1,12 +1,12 @@
 # Tech Store SOAP
 
-## 📌 Descripción
+##  Descripción
 
 Tech Store SOAP es un proyecto desarrollado en C# utilizando ASP.NET Web Forms y servicios web SOAP. Su objetivo es demostrar cómo consumir e implementar servicios web mediante el protocolo SOAP, permitiendo la comunicación e intercambio de información entre diferentes aplicaciones.
 
 El proyecto simula la administración de productos de una tienda de tecnología, utilizando operaciones CRUD (Create, Read, Update, Delete).
 
-## 🚀 Características
+##  Características
 
 - Consumo de servicios web SOAP mediante C#.
 - Integración y comunicación entre aplicaciones mediante servicios web.
@@ -17,7 +17,7 @@ El proyecto simula la administración de productos de una tienda de tecnología,
 - Eliminación de productos.
 - Conexión con una base de datos SQL Server.
 
-## 🛠️ Tecnologías utilizadas
+##  Tecnologías utilizadas
 
 - **C#:** Lenguaje de programación principal.
 - **ASP.NET Web Forms:** Desarrollo de la aplicación web.
@@ -28,7 +28,7 @@ El proyecto simula la administración de productos de una tienda de tecnología,
 - **HTML5 y CSS3:** Estructura y presentación.
 - **JavaScript:** Funcionalidades del lado del cliente.
 
-## 📋 Requisitos previos
+##  Requisitos previos
 
 Para ejecutar el proyecto es necesario contar con:
 
@@ -37,7 +37,7 @@ Para ejecutar el proyecto es necesario contar con:
 - SQL Server.
 - SQL Server Management Studio (SSMS).
 
-## ⚙️ Instalación y ejecución
+##  Instalación y ejecución
 
 1. Clonar el repositorio:
 
@@ -53,7 +53,7 @@ Para ejecutar el proyecto es necesario contar con:
 
 5. Ejecutar el proyecto desde Visual Studio.
 
-## 📁 Estructura del proyecto
+##  Estructura del proyecto
 
 ```text
 TechStore/
@@ -68,10 +68,10 @@ TechStore/
 └── README.md          # Documentación
 ```
 
-## 👨‍💻 Autor
+##  Autor
 
 **Jose David Ariza López**
 
-## 📄 Licencia
+##  Licencia
 
 Este proyecto fue desarrollado con fines académicos y educativos.
